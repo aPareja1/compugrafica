@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Vectores - Alejandro Pareja Londoño</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+    <script src='main.js'></script>
+</head>
+<body>
+    <div id="addVector"> 
+        <h3>Añadir un vector:</h3>
+        <label>Componente X:</label>
+        <input type="number" id="vx">
+        <label>Componente Y:</label>
+        <input type="number" id="vy">
+        <label>Componente Z:</label>
+        <input type="number" id="vz">
+        <button onclick="addVector()"> Añadir Vector</button>
+        
+    </div>
+    
+    <div id="showVectors">
+        <form name="formVectors" id="vectors" >
+            
+        </form>
+       
+           
+        <button onclick="sumVectors()" id="sumVectorsButton" hidden>Sumar Vectores</button>
+        <button onclick="showEdit()" id="editButton" hidden>Modificar vectores</button>
+        
+    </div>
+    <div id="resultadoSuma">
+
+    </div>
+    <div id="editVectors" hidden >
+            <h3>Editar un vector:</h3>
+            <select id="vectorSelect" onChange="selectVector(this.options[this.selectedIndex].value)">
+                <option value="-1">Selecciona un vector </option>
+            </select>
+            <br>
+
+            <div id="editVector" hidden=true> 
+                   
+                    <label>Componente X:</label>
+                    <input type="number" id="ex">
+                    <label>Componente Y:</label>
+                    <input type="number" id="ey">
+                    <label>Componente Z:</label>
+                    <input type="number" id="ez">
+                    <button onclick="editVector()"> Editar Vector</button> 
+                    <button onclick="removeVector()">Eliminar Vector</button>
+            </div>
+
+    </div>
+</body>
+<style>
+        footer {
+          position: fixed;
+          left: 30;
+          bottom: 0;
+          width: 80%;
+         text-align: justify;
+         font-style: italic;
+        }
+        </style>
+<footer>
+        <p>Alejandro Pareja Londoño</p>
+        <p>Tarea 1:Computación Gráfica</p>
+        </footer>
+</html>
