@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Intro a gráficos 3D</title>
+        <link rel="stylesheet" href="./css/style.css">
+        <script src="./vendors/three.js-master/build/three.min.js"></script>
+        <script src="./libs/controls/OrbitControls.js"></script>
+        <script src="./src/figureCreation.js"></script>
+        <script src="./src/main.js"></script>
+    </head>
+    <body onload="startApp()">
+        <div class="gui">
+            <div class="centerText">Vectores</div>
+            <div class="vector">
+                <span>Vector U = </span>
+                <input name="x" data-vector="U" placeholder="x" type="number">
+                <input name="y" data-vector="U" placeholder="y" type="number">
+                <input name="z" data-vector="U" placeholder="z" type="number">
+            </div>
+            <div class="vector">
+                <span>Vector V = </span>
+                <input name="x" data-vector="V" placeholder="x" type="number">
+                <input name="y" data-vector="V" placeholder="y" type="number">
+                <input name="z" data-vector="V" placeholder="z" type="number">
+            </div>
+            <div class="coolButton" onclick="graficar()">Graficar!</div>
+            <div class="row">
+            <br>
+            <div class="centerText">Creación de Figura</div>
+            <br>
+            <div class="smallButton" onclick="create('box')">Box</div>
+            <div class="smallButton" onclick="create('torus')"> Torus</div>
+            <div class="smallButton" onclick="create('cone')"> Cone</div>
+
+            </div>
+            
+            <div class="row">   
+                    <br>
+                    <div class="centerText">Transformación</div>
+                    <br>
+                <div  class="smallButton" onclick="transformOBJ('translate')">Traslación</div>
+                <div class="smallButton" onclick="transformOBJ('scale')">Escalado</div>
+                <div  class="smallButton"onclick="transformOBJ('rotate')">Rotación</div>
+            </div>
+        </div>
+        <div id="selectModel" name="selectModel" class="guiLeft" >
+            <span style="text-align: center; margin-bottom: 10px; margin-top: 10px;">-Selecciona el objeto para aplicarle transformaciones</span>
+            <div id="myList" name="myList">  </div>
+        </div>
+       
+        <canvas id="app"></canvas>
+        
+    </body>
+</html>
