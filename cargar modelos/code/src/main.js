@@ -55,13 +55,14 @@ function initScene(){
 
 function crearFirstModel() {
     var mtlLoader = new THREE.MTLLoader();
-    mtlLoader.setTexturePath('./modelos/obj/');
-    mtlLoader.load('./modelos/obj/ARC170.mtl',materials=>{
+    mtlLoader.setTexturePath('./modelos/obj/MarioandLuigi/');
+    mtlLoader.setPath('./modelos/obj/MarioandLuigi/');
+    mtlLoader.load('Luigi_obj.mtl',materials=>{
         materials.preload();
         var objLoader= new THREE.OBJLoader();
         objLoader.setMaterials(materials);
-        objLoader.setPath('./modelos/obj/');
-        objLoader.load('ARC170.obj',object=>{
+        objLoader.setPath('./modelos/obj/MarioandLuigi/');
+        objLoader.load('Luigi_obj.obj',object=>{
             scene.add(object);
             object.position.y -=60;
         })
@@ -71,7 +72,7 @@ function crearFirstModel() {
 
 function createLight() {
     // Create a directional light
-    const light = new THREE.DirectionalLight( 0xffffff, 5.0 );
+    const light = new THREE.DirectionalLight( 0xffffff, 1 );
 
     // move the light back and up a bit
     light.position.set( 10, 10, 10 );
@@ -80,8 +81,8 @@ function createLight() {
     scene.add( light );
 
 
-    light2 = new THREE.DirectionalLight(0xffffff, 1.0, 1000);
-    scene.add(light2);
+    // light2 = new THREE.DirectionalLight(0xffffff, 1.0, 1000);
+    // scene.add(light2);
 }
 
 function createAbuilding() {
